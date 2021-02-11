@@ -1,11 +1,11 @@
 Lab 3 - Plastic Waste
 ================
 DSC 200 - Data Science I
-2021-02-06
+2021-02-11
 
-Student Name:
+Student Name: Ahmed adnan
 
-Student ID:
+Student ID:2200000997
 
 ``` r
 library(tidyverse)
@@ -76,6 +76,10 @@ ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_density()
 ```
 
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-dens-1.png)<!-- -->
+
 And compare distributions across continents by colouring density curves
 by continent.
 
@@ -85,6 +89,10 @@ ggplot(data = plastic_waste,
                      color = continent)) +
   geom_density()
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-dens-color-1.png)<!-- -->
 
 The resulting plot may be a little difficult to read, so let’s also fill
 the curves in with colours as well.
@@ -97,6 +105,10 @@ ggplot(data = plastic_waste,
   geom_density()
 ```
 
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-dens-color-fill-1.png)<!-- -->
+
 ``` r
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap, 
@@ -105,11 +117,27 @@ ggplot(data = plastic_waste,
   geom_density(alpha = 0.7)
 ```
 
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-dens-color-fill-alpha-1.png)<!-- -->
+
 This still doesn’t look great…
 
 E2. Recreate the density plots above using a different (lower) alpha
 level that works better for displaying the density curves for all
 continents.
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.3)
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-dens-color-fill-alpha-low-density-1.png)<!-- -->
 
 E3. Describe why we defined the `color` and `fill` of the curves by
 mapping aesthetics of the plot but we defined the `alpha` level as a
@@ -131,6 +159,10 @@ ggplot(data = plastic_waste,
                      y = plastic_waste_per_cap)) +
   geom_boxplot()
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_boxplot).
+
+![](lab-3-plastic-waste_files/figure-gfm/plastic_waste_per_cap-box-1.png)<!-- -->
 
 E4. Convert your side-by-side box plots from the previous task to
 [violin plots](http://ggplot2.tidyverse.org/reference/geom_violin.html).
