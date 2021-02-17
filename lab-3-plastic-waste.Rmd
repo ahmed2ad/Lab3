@@ -159,11 +159,17 @@ E7.  Visualize the relationship between plastic waste per capita and total popul
     Do either of these pairs of variables appear to be more strongly linearly associated?
 
 ```{r plastic_waste_per_cap_total_population}
-
+ggplot(data = plastic_waste, 
+       mapping = aes(x = total_pop, 
+                     y = plastic_waste_per_cap, color = continent)) +
+  geom_point()
 ```
 
 ```{r plastic_waste_per_cap_coastal_population}
-
+ggplot(data = plastic_waste, 
+       mapping = aes(x = coastal_pop, 
+                     y = plastic_waste_per_cap, color = continent)) +
+  geom_point()
 ```
 
 
